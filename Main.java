@@ -1,4 +1,5 @@
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Queue;
 
 public class Main {
@@ -7,7 +8,7 @@ public class Main {
         Queue toDoQueue = new ArrayDeque(numberOfTasks); // создаем очередь
         Boss boss = new Boss(toDoQueue); // создаем начальника с ссылкой на
         // очередь
-        Worker worker = new Worker(toDoQueue); // то же самое делаем с рабочим
+        Worker worker = new Worker((Deque) toDoQueue); // то же самое делаем с рабочим
         // в цикле начальник заполняет очередь заданиями
         for (int i = 1; i <= numberOfTasks; i++) {
             boss.giveTask("Задание " + i);
